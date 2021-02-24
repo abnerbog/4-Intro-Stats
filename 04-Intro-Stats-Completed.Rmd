@@ -1,10 +1,6 @@
----
-title: "4-Intro-Stats-COMPLETED"
-output: html_document
----
+# Introduction to Basic Statistics {#stats}
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
 
 library(tidyverse)
 library(patchwork)
@@ -18,13 +14,10 @@ theme_set(theme_classic())
 
 ## Questions for today:
 
-### What is the difference between a sample and a population?
-
-### How do we look at the distribution of data in a sample?
-
-### How do we measure aspects of a distribution?
-
-### What is a normal distribution?
+-   *What is the difference between a sample and a population?*
+-   *How do we look at the distribution of data in a sample*
+-   *How do we measure aspects of a distribution*
+-   *What is a normal distribution?*
 
 First let's generate some synthetic data and talk about how to visualize it.
 
@@ -161,7 +154,7 @@ Another example is precipitation gages. In the image below, you see there are 5 
 
 In the weighted situation, we find the average by multiplying each precipitation values by the proportion of the watershed it represents, shown by the Thiessen polygons, and then add them all together. Let's do an example.
 
-![Figure 7: A watershed showing the three methods of determining areal precipitation: (L-R) arithmetic-average, weighted average using Thiessen polygon, surface-fitting with isohyets. From: <https://edx.hydrolearn.org/courses/course-v1:HydroLearn+HydroLearn401+2019_S2/courseware/cd43c81fa55944d4ad7d5bd9aabc8837/a0f2a1f50e824f8fb15faa57a9666a69/4>](https://edx.hydrolearn.org/assets/courseware/v1/e5dc65098f1e8c5faacae0e171e28ccf/asset-v1:HydroLearn+HydroLearn401+2019_S2+type@asset+block/l2_image004.png)
+![Different types of area averaging](images/theissen.png "Different types of area averaging")source: [https://edx.hydrolearn.org/assets/courseware/v1/e5dc65098f1e8c5faacae0e171e28ccf/asset-v1:HydroLearn+HydroLearn401+2019_S2+type\@asset+block/l2_image004.png](https://edx.hydrolearn.org/assets/courseware/v1/e5dc65098f1e8c5faacae0e171e28ccf/asset-v1:HydroLearn+HydroLearn401+2019_S2+type@asset+block/l2_image004.png){.uri}
 
 The precip values for the watershed above are 4.5, 5.5, 5.8, 4.7, and 3.0
 
@@ -189,7 +182,7 @@ We will explore four measures of variability:
 
 Sum of the squared difference of each value from the mean divided by the number of samples minus 1. var()
 
-[![Formula for variance (from USGS statistics book linked)](images/Screen Shot 2021-01-25 at 10.29.45 AM.png)](https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf)
+![Formula for variance (from USGS statistics book linked)](images/Screen Shot 2021-01-25 at 10.29.45 AM.png)(<https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>) source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>
 
 #### Standard deviation:
 
@@ -199,11 +192,11 @@ The square root of the variance sd()
 
 #### CV: Coefficient of Variation
 
-is simply the standard deviation divided by the mean of the data. Because you divide by the mean, CV is dimensionless. This allows you to use it to compare the variation in samples with very different magnitudes.
+CV is simply the standard deviation divided by the mean of the data. Because you divide by the mean, CV is dimensionless. This allows you to use it to compare the variation in samples with very different magnitudes.
 
 #### IQR: Interquartile Range
 
-is resistant to outliers because it works like a median. It measures the range of the middle 50% of the data in your distribution. So the IQR is the difference between the value between the 75th and 25th percentiles of your data, where the 75th percentile means 75% of the data is BELOW that value and the 25th percentile means 25% is below that value. Using the same vocabulary, the median is the same as the 50th percentile of the data.
+IQR is resistant to outliers because it works like a median. It measures the range of the middle 50% of the data in your distribution. So the IQR is the difference between the value between the 75th and 25th percentiles of your data, where the 75th percentile means 75% of the data is BELOW that value and the 25th percentile means 25% is below that value. Using the same vocabulary, the median is the same as the 50th percentile of the data.
 
 If you ask R for the QUANTILES of your sample data, it will give you the values at which 0%, 25%, 50%, 75%, and 100% of the data are below. These are the 1,2,3,4, and 5th quantiles. Therefore, the IQR is the difference between the 4th and 2nd quantile.
 
@@ -242,7 +235,7 @@ quants[4] - quants[2]
 
 There are several ways to measure this as well, but we are just going to look at one: The Quartile skew. The quartile skew is the difference between the upper quartiles (50th-75th) and the lower quartiles (25th-50th) divided by the IQR (75th-25th).
 
-![Quartile skew from USGS Stats Book linked above](images/Screen Shot 2021-01-25 at 11.27.14 AM.png)
+![Quartile skew from USGS Stats Book linked above](images/Screen Shot 2021-01-25 at 11.27.14 AM.png) source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>
 
 Let's look at the quartile skew of the two distributions we've been measuring. Calculate it for the pineQ discharge data and the random normal distribution we generated.
 
@@ -262,11 +255,11 @@ quantsX <- quantile(ExNorm$value)
 
 The distribution we generated with rnorm() is a normal distribution. The distribution of pineQ discharge is not normal. Now that we've looked at different ways to characterize distributions, we have the vocabulary to describe why.
 
-Normal distributions:
+**Normal distributions:**
 
-mean = median, half values to the right, half to the left
-
-symmetric (not skewed)
+-   mean = median, half values to the right, half to the left
+-   symmetric (not skewed)
+-   single peak
 
 Many statistical tests require that the distribution of the data you put into them is normally distributed. BE CAREFUL! There are also tests that use ranked data. Similar to how the median is resistant to outliers, these rank-based tests are resistant to non-normal data. Two popular ones are Kruskal-Wallis and Wilcoxon rank-sum.
 
