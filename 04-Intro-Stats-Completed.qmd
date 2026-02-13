@@ -1,24 +1,12 @@
 ---
 title: "Chapter 4: Intro to Basic Stats"
 date: today
-author:
-  - name: JP Gannon
-    orcid: 0000-0002-4595-3214
-    url: https://jpgannon.github.io/
-    affiliation: 
-      - name: Virginia Tech
-        url: https://www.vt.edu/
-format:
-  html: 
-    self-contained: true
-  ipynb:
-    nb-frontmatter: true
-    jupyter:
-      kernel: ir
-      ipynb-shell-interactivity: all
-execute: 
+author: JP Gannon
+format: gfm
+execute:
   enabled: true
 ---
+
 The code and classroom notes for following along can be found at the following link
 
 <https://github.com/VT-Hydroinformatics/4-Intro-Stats>
