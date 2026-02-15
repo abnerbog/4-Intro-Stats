@@ -200,7 +200,7 @@ We will explore four measures of variability:
 
 Sum of the squared difference of each value from the mean divided by the number of samples minus 1. var()
 
-![](images/Screen Shot 2021-01-25 at 10.29.45 AM.png)
+![](images/eqn1.png)
 
 _Formula for variance (from USGS statistics book linked: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>_\ 
 _source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>_
@@ -256,7 +256,7 @@ quants[4] - quants[2]
 
 There are several ways to measure this as well, but we are just going to look at one: The Quartile skew. The quartile skew is the difference between the upper quartiles (50th-75th) and the lower quartiles (25th-50th) divided by the IQR (75th-25th).
 
-![](images/Screen Shot 2021-01-25 at 11.27.14 AM.png)
+![](images/skew.png)
 
 _Quartile skew from USGS Stats Book linked above_\
 _source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>_

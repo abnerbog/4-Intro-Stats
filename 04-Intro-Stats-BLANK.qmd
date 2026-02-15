@@ -146,7 +146,7 @@ We will explore four measures of variability:
 
 Sum of the squared difference of each value from the mean divided by the number of samples minus 1. var()
 
-![Formula for variance (from USGS statistics book linked)](images/Screen%20Shot%202021-01-25%20at%2010.29.45%20AM.png)(<https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>) source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>
+![Formula for variance (from USGS statistics book linked)](images/eqn1.png)(<https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>) source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>
 
 #### Standard deviation:
 
@@ -195,7 +195,7 @@ Now let's calculate the standard deviation, variance, coefficient of variation, 
 
 There are several ways to measure this as well, but we are just going to look at one: The Quartile skew. The quartile skew is the difference between the upper quartiles (50th-75th) and the lower quartiles (25th-50th) divided by the IQR (75th-25th).
 
-![Quartile skew from USGS Stats Book linked above](images/Screen%20Shot%202021-01-25%20at%2011.27.14%20AM.png) source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>
+![Quartile skew from USGS Stats Book linked above](images/skew.png) source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>
 
 Let's look at the quartile skew of the two distributions we've been measuring. Calculate it for the pineQ discharge data and the random normal distribution we generated.
 

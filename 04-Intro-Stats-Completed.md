@@ -1,6 +1,6 @@
 # Chapter 4: Intro to Basic Stats
 JP Gannon
-2026-02-12
+2026-02-15
 
 The code and classroom notes for following along can be found at the
 following link
@@ -13,22 +13,12 @@ following link
 library(tidyverse)
 ```
 
-    Warning: package 'tidyverse' was built under R version 4.3.3
-
-    Warning: package 'readr' was built under R version 4.3.3
-
-    Warning: package 'dplyr' was built under R version 4.3.3
-
-    Warning: package 'forcats' was built under R version 4.3.3
-
-    Warning: package 'lubridate' was built under R version 4.3.3
-
     ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ✔ dplyr     1.1.4     ✔ readr     2.1.5
     ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ✔ ggplot2   4.0.0     ✔ tibble    3.2.1
-    ✔ lubridate 1.9.4     ✔ tidyr     1.3.0
-    ✔ purrr     1.0.2     
+    ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+    ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+    ✔ purrr     1.0.4     
     ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
     ✖ dplyr::filter() masks stats::filter()
     ✖ dplyr::lag()    masks stats::lag()
@@ -66,7 +56,7 @@ ExNorm |>
   geom_histogram()
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](04-Intro-Stats-Completed_files/figure-commonmark/unnamed-chunk-2-1.png)
 
@@ -106,7 +96,7 @@ expdf <- ExNorm |>
 exhist/expdf
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](04-Intro-Stats-Completed_files/figure-commonmark/unnamed-chunk-3-1.png)
 
@@ -154,8 +144,8 @@ sample_hist <- sample_of_water |>
 population_hist + sample_hist
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
-    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](04-Intro-Stats-Completed_files/figure-commonmark/unnamed-chunk-4-1.png)
 
@@ -227,8 +217,8 @@ PineP <- pineQ |> ggplot(aes(cfs)) +
 Ex / PineP  
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
-    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](04-Intro-Stats-Completed_files/figure-commonmark/unnamed-chunk-6-1.png)
 
@@ -308,7 +298,7 @@ We will explore four measures of variability:
 Sum of the squared difference of each value from the mean divided by the
 number of samples minus 1. var()
 
-![](images/Screen%20Shot%202021-01-25%20at%2010.29.45%20AM.png)
+![](images/eqn1.png)
 
 *Formula for variance (from USGS statistics book linked:
 <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>*  *source:
@@ -408,7 +398,7 @@ look at one: The Quartile skew. The quartile skew is the difference
 between the upper quartiles (50th-75th) and the lower quartiles
 (25th-50th) divided by the IQR (75th-25th).
 
-![](images/Screen%20Shot%202021-01-25%20at%2011.27.14%20AM.png)
+![](images/skew.png)
 
 *Quartile skew from USGS Stats Book linked above*  
 *source: <https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf>*
@@ -434,8 +424,8 @@ quantsX <- quantile(ExNorm$value)
 ((quantsX[4]-quantsX[3]) - (quantsX[3] - quantsX[2])) / (quantsX[4] - quantsX[2])
 ```
 
-            75% 
-    0.004290115 
+             75% 
+    -0.008755709 
 
 ## What is a normal distribution and how can we determine if we have one?
 
