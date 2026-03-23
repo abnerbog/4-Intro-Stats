@@ -1,6 +1,11 @@
-# Chapter 4: Intro to Basic Stats
-JP Gannon
-2026-02-15
+---
+title: 'Chapter 4: Intro to Basic Stats'
+date: 2026-03-23T00:00:00.000Z
+authors:
+  - id: jpgannon
+github: https://github.com/VT-Hydroinformatics/4-Intro-Stats
+---
+
 
 The code and classroom notes for following along can be found at the
 following link
@@ -13,12 +18,22 @@ following link
 library(tidyverse)
 ```
 
+    Warning: package 'tidyverse' was built under R version 4.3.3
+
+    Warning: package 'readr' was built under R version 4.3.3
+
+    Warning: package 'dplyr' was built under R version 4.3.3
+
+    Warning: package 'forcats' was built under R version 4.3.3
+
+    Warning: package 'lubridate' was built under R version 4.3.3
+
     ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ✔ dplyr     1.1.4     ✔ readr     2.1.5
     ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-    ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-    ✔ purrr     1.0.4     
+    ✔ ggplot2   4.0.0     ✔ tibble    3.2.1
+    ✔ lubridate 1.9.4     ✔ tidyr     1.3.0
+    ✔ purrr     1.0.2     
     ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
     ✖ dplyr::filter() masks stats::filter()
     ✖ dplyr::lag()    masks stats::lag()
@@ -56,7 +71,7 @@ ExNorm |>
   geom_histogram()
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 
 ![](04-Intro-Stats-Completed_files/figure-commonmark/unnamed-chunk-2-1.png)
 
@@ -96,7 +111,7 @@ expdf <- ExNorm |>
 exhist/expdf
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 
 ![](04-Intro-Stats-Completed_files/figure-commonmark/unnamed-chunk-3-1.png)
 
@@ -144,8 +159,8 @@ sample_hist <- sample_of_water |>
 population_hist + sample_hist
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 
 ![](04-Intro-Stats-Completed_files/figure-commonmark/unnamed-chunk-4-1.png)
 
@@ -217,8 +232,8 @@ PineP <- pineQ |> ggplot(aes(cfs)) +
 Ex / PineP  
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
+    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 
 ![](04-Intro-Stats-Completed_files/figure-commonmark/unnamed-chunk-6-1.png)
 
@@ -424,8 +439,8 @@ quantsX <- quantile(ExNorm$value)
 ((quantsX[4]-quantsX[3]) - (quantsX[3] - quantsX[2])) / (quantsX[4] - quantsX[2])
 ```
 
-             75% 
-    -0.008755709 
+           75% 
+    0.01255277 
 
 ## What is a normal distribution and how can we determine if we have one?
 
