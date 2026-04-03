@@ -3,6 +3,23 @@ title: 'Chapter 4: Intro to Basic Stats'
 date: 2026-03-23T00:00:00.000Z
 authors:
   - id: jpgannon
+    name: JP Gannon
+    email: jpgannon@vt.edu
+    github: jpgannon
+    orcid: 0000-0002-4595-3214
+    corresponding: true
+    url: https://jpgannon.github.io/
+    affiliations:
+      - vt-tech
+affiliations:
+  - id: vt-tech
+    name: Virginia Tech
+    url: https://www.vt.edu/
+subject: Courseware
+doi: https://doi.org/10.4211/hs.9b943a448a7a42129eeaf4ac3b57910a
+venue:
+  title: View Resource on HydroShare
+  url: https://hydroshare.org/resource/9b943a448a7a42129eeaf4ac3b57910a/
 github: https://github.com/VT-Hydroinformatics/4-Intro-Stats
 ---
 
@@ -440,7 +457,7 @@ quantsX <- quantile(ExNorm$value)
 ```
 
            75% 
-    0.01255277 
+    -0.0274079 
 
 ## What is a normal distribution and how can we determine if we have one?
 
