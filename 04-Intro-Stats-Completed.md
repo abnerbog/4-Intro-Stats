@@ -21,6 +21,9 @@ venue:
   title: View Resource on HydroShare
   url: https://hydroshare.org/resource/9b943a448a7a42129eeaf4ac3b57910a/
 github: https://github.com/VT-Hydroinformatics/4-Intro-Stats
+downloads:
+  - file: 04-Intro-Stats-Completed.md
+  - file: 04-Intro-Stats-Completed.pdf
 ---
 
 
@@ -457,7 +460,7 @@ quantsX <- quantile(ExNorm$value)
 ```
 
            75% 
-    -0.0274079 
+    0.03430716 
 
 ## What is a normal distribution and how can we determine if we have one?
 
